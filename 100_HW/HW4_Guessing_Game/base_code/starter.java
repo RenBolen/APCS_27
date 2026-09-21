@@ -1,7 +1,7 @@
 /*
- *	Author:
- *  Date:
- * 	Collaborator:
+ *	Author: Ren Bolen
+ *  Date: September 20, 2026
+ * 	Collaborator: 
 */
 
 import java.util.Scanner;
@@ -14,8 +14,11 @@ class starter {
 		System.out.println();
 		if (question == 1){
 			System.out.println("It is a number.");
-			Int number = sc.nextInt();
-			
+			System.out.print("Choose your number: ");
+;			int number = sc.nextInt();
+			if (number == 2) {
+				System.out.println("That is correct!");
+			}
 			
 		}
 		if (question == 2){
