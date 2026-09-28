@@ -13,7 +13,6 @@ class starter {
 		int question = (int) (Math.random() * 3 + 1);
 		System.out.println();
 		System.out.println("Try to answer the questions and get it right!");
-		System.out.println("(If it is a word, the first letter should be capitalized.)");
 		System.out.println();
 		if (question == 1){
 			System.out.println("It is a number.");
@@ -38,20 +37,20 @@ class starter {
 
 		if (question == 2){
 			System.out.println("It is an animal");
-			String text = sc.nextLine();
 ;			String guess1 = sc.nextLine();
 			String answer = "Kangaroo";
-			if (guess1 != answer) {
+			String answer2 = "kangaroo";
+			if (!answer.equals(guess1) && !answer2.equals(guess1)) {
 				System.out.println("That is incorrect.");
 				System.out.println("Hint 1: It is the largest mammal on its continent.");
 				guess1 = sc.nextLine();
 			}
-			if (guess1 != answer) {
+			if (!answer.equals(guess1) && !answer2.equals(guess1)) {
 				System.out.println("That is incorrect.");
 				System.out.println("Hint 2: This animal is native to Australia.");
 				guess1 = sc.nextLine();
 			}
-			if (guess1 != answer) {
+			if (!answer.equals(guess1) && !answer2.equals(guess1)) {
 				System.out.println("That is incorrect. The answer was a Kangaroo.");
 			}
 			else{
@@ -61,20 +60,20 @@ class starter {
 
 		if (question == 3){
 			System.out.println("it is a drink ");
-			String text = sc.nextLine();
 			String guess1 = sc.nextLine();
 			String answer = "Tea";
-			if (guess1 != answer) {
+			String answer2 = "tea";
+			if (!answer.equals(guess1) && !answer2.equals(guess1)) {
 				System.out.println("That is incorrect.");
 				System.out.println("Hint 1: Its the most popular drink besides water.");
 				guess1 = sc.nextLine();
 			}
-			if (guess1 != answer) {
+			if (!answer.equals(guess1) && !answer2.equals(guess1)) {
 				System.out.println("That is incorrect.");
 				System.out.println("Hint 2: This drink is originally from east and south-east Asia..");
 				guess1 = sc.nextLine();
 			}
-			if (guess1 != answer) {
+			if (!answer.equals(guess1) && !answer2.equals(guess1)) {
 				System.out.println("That is incorrect. The answer was tea.");
 			}
 			else{
