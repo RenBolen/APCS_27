@@ -13,7 +13,96 @@ class starter {
 	static ArrayList<String> arr = new ArrayList<String>();
 
 	public static void main(String args[]) throws InterruptedException {
-		// Write your code here!
+		Scanner sc = new Scanner(System.in);
+		populateArrayList();
+		boolean running = true;
+		int plays = 0;
+		System.out.println("========================================");
+		System.out.println("             Typing Game");
+		System.out.println("========================================");
+		System.out.println("Type the sentence as fast as possible.");
+		String givenSentence = "";
+		while (running) {
+			System.out.println();
+			System.out.println("Would you like to play the typing game?");
+			String choice = sc.nextLine();
+			if (choice.equalsIgnoreCase("yes")) {
+				System.out.println("Would you like to choose a sentence or have a random sentence chosen for you? (Choose or Random)");
+				if (plays > 0) {
+					System.out.println("If you would like the same sentence as before type same.");
+				}
+				String sentenceType = sc.nextLine();
+				int answerNum = 0;
+				while ((!sentenceType.equalsIgnoreCase("Choose") && !sentenceType.equalsIgnoreCase("Random") && !sentenceType.equalsIgnoreCase("same")) || answerNum == 0){
+					if (!sentenceType.equalsIgnoreCase("Choose") && !sentenceType.equalsIgnoreCase("Random") && !sentenceType.equalsIgnoreCase("same")) {
+						System.out.println("Please enter a valid answer.");
+						sentenceType = sc.nextLine();
+					}
+					answerNum++;
+					
+					if (sentenceType.equalsIgnoreCase("Choose")) {
+						System.out.println("Which sentence would you like to type? (1-100)");
+						int sentenceNum = sc.nextInt();
+						System.out.println("It is currently " + getTime() + ".");
+						countdown();
+						startTimer();
+						givenSentence = getSentence(sentenceNum);
+						System.out.println(givenSentence);
+						sc.nextLine();
+						String typedSentence = sc.nextLine();
+						endTimer();
+						System.out.println("========================================"); 
+						System.out.println("You took " + endTimer() + " seconds.");
+						System.out.println("You typed " + lettersInSentence(typedSentence) + " characters.");
+						System.out.println("You typed " + wordsInSentence(typedSentence) + " words.");
+						System.out.println("You made " + compareSentences(givenSentence, typedSentence) + " mistakes.");
+					}
+					else if (sentenceType.equalsIgnoreCase("Random")) {
+						System.out.println("It is currently " + getTime() + ".");
+						countdown();
+						startTimer();
+						givenSentence = getSentence();
+						System.out.println(givenSentence);
+						String typedSentence = sc.nextLine();
+						endTimer();
+						System.out.println("========================================"); 
+						System.out.println("You took " + endTimer() + " seconds.");
+						System.out.println("You typed " + lettersInSentence(typedSentence) + " characters.");
+						System.out.println("You typed " + wordsInSentence(typedSentence) + " words.");
+						System.out.println("You made " + compareSentences(givenSentence, typedSentence) + " mistakes.");
+					}
+					if (sentenceType.equalsIgnoreCase("same")) {
+						System.out.println("It is currently " + getTime() + ".");
+						countdown();
+						startTimer();
+						System.out.println(givenSentence);
+						String typedSentence = sc.nextLine();
+						endTimer();
+						System.out.println("========================================"); 
+						System.out.println("You took " + endTimer() + " seconds.");
+						System.out.println("You typed " + lettersInSentence(typedSentence) + " characters.");
+						System.out.println("You typed " + wordsInSentence(typedSentence) + " words.");
+						System.out.println("You made " + compareSentences(givenSentence, typedSentence) + " mistakes.");
+					}
+				}
+			}
+			else if (choice.equalsIgnoreCase("no")) {
+				if (plays == 0) {
+					System.out.println("Thank you for running this code.");
+				}
+				if (plays > 0) {
+					System.out.println("Thank you for playing.");
+				}
+				running = false;
+			}
+			else {
+				System.out.println();
+				System.out.println("Please enter another answer.");
+				System.out.println();
+				plays--;	
+			}
+			plays++;
+		}
 
 		
 	}
