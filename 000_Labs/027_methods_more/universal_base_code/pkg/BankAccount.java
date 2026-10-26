@@ -53,8 +53,9 @@ public class BankAccount {
 		System.out.println("=============");
 		System.out.println("     ATM");
 		System.out.println("");
-		)
 	}
-
+	public String checkBalance() {
+		return "Your balance is " + balance + ".";
+	}
 
 }
