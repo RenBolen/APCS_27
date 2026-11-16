@@ -7,11 +7,14 @@ import java.util.*;
 
 class starter {
 	public static void main(String args[]) {
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Please enter a word to hide.");
+		String word = sc.nextLine();
+		int arr[][] = new int [word.length() * 5][word.length() * 5];
+		System.out.println("How would you like your word to be placed\n -(1)vertically \n -(2)horizontally\n -(3)diagonally?");
+		String wordDirection
 		/*
 			Create a program that creates a crossword puzzle hiding 1 word given by the user!
-
-			1. Take a word from the user
-			2. Create a 2D String array with a size of 5 larger than the word size in both directions
 			3. Choose what direction the word should hide in
 				- Vertical, Horizontal, Diagonal
 				- EXTRA: Choose if the word should hide forward or backwards
