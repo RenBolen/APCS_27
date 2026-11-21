@@ -8,13 +8,13 @@ import java.util.*;
 
 class starter {
 	public static void main(String args[]) {
-		int fightingNum = 100;
+		int fightingNum = 30000000;
 		
-		Wizard wizard[] = new Wizard[fightingNum];
+		Wizard[] wizard = new Wizard[fightingNum];
 		for (int i = 0; i < fightingNum; i++) {
 			wizard[i] = new Wizard();
 		}
-		Warrior warrior[] = new Warrior[fightingNum];
+		Warrior[] warrior = new Warrior[fightingNum];
 		for (int i = 0; i < fightingNum; i++) {
 			warrior[i] = new Warrior();
 		}
